@@ -1,0 +1,771 @@
+@charset "UTF-8";
+/*
+全てのページに影響するCSSに関して記述しているファイル
+phpで作成したpartsごとのファイルを作成する様にする
+*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+/*
+変数関係をまとめたファイル
+ */
+/*
+色に関して記述しているファイル
+色に関して、ここで宣言をしたものを利用する様にする
+*/
+:root {
+  --color-default: #222222;
+  --color-white: #fff;
+  --color-gray: #929292;
+  --color-main: #306FB8;
+  --color-red: #FF2E00;
+  --color-orange: #FD9A28;
+}
+
+/*
+ブレイクポイントに関して記述しているファイル
+下のブレイクポイントの設定を変更するときは必ずPMに一声かける
+ */
+/* ブレイクポイントの設定 min~max */
+/* mq-target:指定してメディアクエリのみに適用 */
+/* mq:指定より小さい画面に適用 */
+html {
+  font-weight: 500;
+  font-family: "Noto Sans JP", -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", "Hiragino Sans", Helvetica, "游ゴシック  Medium", meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 2em;
+  color: var(--color-font-default);
+  background-color: var(--color-bg-default);
+  scroll-padding-top: 140px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+input,
+textarea,
+button,
+select,
+a,
+li {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 2em;
+  color: var(--color-font-default);
+}
+h1.font-proxima-nova,
+h2.font-proxima-nova,
+h3.font-proxima-nova,
+h4.font-proxima-nova,
+h5.font-proxima-nova,
+h6.font-proxima-nova,
+p.font-proxima-nova,
+label.font-proxima-nova,
+input.font-proxima-nova,
+textarea.font-proxima-nova,
+button.font-proxima-nova,
+select.font-proxima-nova,
+a.font-proxima-nova,
+li.font-proxima-nova {
+  font-family: "proxima-nova", "Noto Sans JP", -apple-system, BlinkMacSystemFont, ".SFNSDisplay-Regular", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Helvetica, "游ゴシック  Medium", meiryo, sans-serif;
+}
+h1.semi-bold,
+h2.semi-bold,
+h3.semi-bold,
+h4.semi-bold,
+h5.semi-bold,
+h6.semi-bold,
+p.semi-bold,
+label.semi-bold,
+input.semi-bold,
+textarea.semi-bold,
+button.semi-bold,
+select.semi-bold,
+a.semi-bold,
+li.semi-bold {
+  font-weight: 600;
+}
+h1.bold,
+h2.bold,
+h3.bold,
+h4.bold,
+h5.bold,
+h6.bold,
+p.bold,
+label.bold,
+input.bold,
+textarea.bold,
+button.bold,
+select.bold,
+a.bold,
+li.bold {
+  font-weight: 700;
+}
+h1.extra-bold,
+h2.extra-bold,
+h3.extra-bold,
+h4.extra-bold,
+h5.extra-bold,
+h6.extra-bold,
+p.extra-bold,
+label.extra-bold,
+input.extra-bold,
+textarea.extra-bold,
+button.extra-bold,
+select.extra-bold,
+a.extra-bold,
+li.extra-bold {
+  font-weight: 800;
+}
+h1.gray,
+h2.gray,
+h3.gray,
+h4.gray,
+h5.gray,
+h6.gray,
+p.gray,
+label.gray,
+input.gray,
+textarea.gray,
+button.gray,
+select.gray,
+a.gray,
+li.gray {
+  color: var(--color-font-gray);
+}
+h1.gray-light,
+h2.gray-light,
+h3.gray-light,
+h4.gray-light,
+h5.gray-light,
+h6.gray-light,
+p.gray-light,
+label.gray-light,
+input.gray-light,
+textarea.gray-light,
+button.gray-light,
+select.gray-light,
+a.gray-light,
+li.gray-light {
+  color: var(--color-font-gray-light);
+}
+h1.gray-dark,
+h2.gray-dark,
+h3.gray-dark,
+h4.gray-dark,
+h5.gray-dark,
+h6.gray-dark,
+p.gray-dark,
+label.gray-dark,
+input.gray-dark,
+textarea.gray-dark,
+button.gray-dark,
+select.gray-dark,
+a.gray-dark,
+li.gray-dark {
+  color: var(--color-font-gray-dark);
+}
+h1.white,
+h2.white,
+h3.white,
+h4.white,
+h5.white,
+h6.white,
+p.white,
+label.white,
+input.white,
+textarea.white,
+button.white,
+select.white,
+a.white,
+li.white {
+  color: var(--color-font-white);
+}
+h1.navy,
+h2.navy,
+h3.navy,
+h4.navy,
+h5.navy,
+h6.navy,
+p.navy,
+label.navy,
+input.navy,
+textarea.navy,
+button.navy,
+select.navy,
+a.navy,
+li.navy {
+  color: var(--color-font-navy);
+}
+h1.right,
+h2.right,
+h3.right,
+h4.right,
+h5.right,
+h6.right,
+p.right,
+label.right,
+input.right,
+textarea.right,
+button.right,
+select.right,
+a.right,
+li.right {
+  text-align: right;
+}
+h1.left,
+h2.left,
+h3.left,
+h4.left,
+h5.left,
+h6.left,
+p.left,
+label.left,
+input.left,
+textarea.left,
+button.left,
+select.left,
+a.left,
+li.left {
+  text-align: left;
+}
+h1.justify,
+h2.justify,
+h3.justify,
+h4.justify,
+h5.justify,
+h6.justify,
+p.justify,
+label.justify,
+input.justify,
+textarea.justify,
+button.justify,
+select.justify,
+a.justify,
+li.justify {
+  text-align: justify;
+}
+h1.center,
+h2.center,
+h3.center,
+h4.center,
+h5.center,
+h6.center,
+p.center,
+label.center,
+input.center,
+textarea.center,
+button.center,
+select.center,
+a.center,
+li.center {
+  text-align: center;
+}
+h1.underline,
+h2.underline,
+h3.underline,
+h4.underline,
+h5.underline,
+h6.underline,
+p.underline,
+label.underline,
+input.underline,
+textarea.underline,
+button.underline,
+select.underline,
+a.underline,
+li.underline {
+  text-decoration: underline;
+}
+
+header,
+footer,
+section,
+.section,
+.modal-cont {
+  position: relative;
+  width: 100%;
+  padding: 0;
+}
+header > .bg,
+footer > .bg,
+section > .bg,
+.section > .bg,
+.modal-cont > .bg {
+  position: absolute;
+  z-index: -1;
+}
+header > .bg.bg-cover,
+footer > .bg.bg-cover,
+section > .bg.bg-cover,
+.section > .bg.bg-cover,
+.modal-cont > .bg.bg-cover {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+header > .bg.bg-center,
+footer > .bg.bg-center,
+section > .bg.bg-center,
+.section > .bg.bg-center,
+.modal-cont > .bg.bg-center {
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+header > .bg.bg-hidden,
+footer > .bg.bg-hidden,
+section > .bg.bg-hidden,
+.section > .bg.bg-hidden,
+.modal-cont > .bg.bg-hidden {
+  overflow: hidden;
+}
+header > .container,
+footer > .container,
+section > .container,
+.section > .container,
+.modal-cont > .container {
+  position: relative;
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
+}
+@media screen and (max-width: 840px) {
+  header > .container,
+  footer > .container,
+  section > .container,
+  .section > .container,
+  .modal-cont > .container {
+    max-width: 640px;
+  }
+}
+header > .container.narrow,
+footer > .container.narrow,
+section > .container.narrow,
+.section > .container.narrow,
+.modal-cont > .container.narrow {
+  max-width: 996px;
+}
+@media screen and (max-width: 840px) {
+  header > .container.narrow,
+  footer > .container.narrow,
+  section > .container.narrow,
+  .section > .container.narrow,
+  .modal-cont > .container.narrow {
+    max-width: 640px;
+  }
+}
+header > .container.wide,
+footer > .container.wide,
+section > .container.wide,
+.section > .container.wide,
+.modal-cont > .container.wide {
+  max-width: 1200px;
+}
+@media screen and (max-width: 840px) {
+  header > .container.wide,
+  footer > .container.wide,
+  section > .container.wide,
+  .section > .container.wide,
+  .modal-cont > .container.wide {
+    max-width: 640px;
+  }
+}
+header.wide,
+footer.wide,
+section.wide,
+.section.wide,
+.modal-cont.wide {
+  padding: 0 26px;
+}
+@media screen and (max-width: 840px) {
+  header.wide,
+  footer.wide,
+  section.wide,
+  .section.wide,
+  .modal-cont.wide {
+    padding: 0 40px;
+  }
+}
+header.no-max,
+footer.no-max,
+section.no-max,
+.section.no-max,
+.modal-cont.no-max {
+  padding: 0;
+}
+header.no-max > .container,
+footer.no-max > .container,
+section.no-max > .container,
+.section.no-max > .container,
+.modal-cont.no-max > .container {
+  max-width: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+}
+
+button:disabled {
+  background: var(--color-bg-gray-dark2) !important;
+}
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+.is-md {
+  display: none;
+}
+@media screen and (max-width: 840px) {
+  .is-md {
+    display: inherit;
+  }
+}
+
+.is-no-md {
+  display: inherit;
+}
+@media screen and (max-width: 840px) {
+  .is-no-md {
+    display: none;
+  }
+}
+
+.is-sm {
+  display: none;
+}
+@media screen and (max-width: 680px) {
+  .is-sm {
+    display: block;
+  }
+}
+
+.is-no-sm {
+  display: block;
+}
+@media screen and (max-width: 680px) {
+  .is-no-sm {
+    display: none;
+  }
+}
+
+.is-xs {
+  display: none;
+}
+@media screen and (max-width: 425px) {
+  .is-xs {
+    display: block;
+  }
+}
+
+.is-no-xs {
+  display: block;
+}
+@media screen and (max-width: 425px) {
+  .is-no-xs {
+    display: none;
+  }
+}
+
+@keyframes topToBottom {
+  0% {
+    transform: translateY(-108%);
+  }
+  80% {
+    transform: translateY(108%);
+  }
+  100% {
+    transform: translateY(108%);
+  }
+}
+@keyframes moreArrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-32%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.none {
+  display: none !important;
+}
+
+.event-none {
+  pointer-events: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  padding-bottom: 240px;
+  position: relative;
+}
+main a {
+  font-size: 14px;
+  word-break: break-word;
+}
+@media screen and (max-width: 840px) {
+  main a {
+    font-size: 12px;
+  }
+}
+main a.not-line {
+  text-decoration: none;
+}
+main a.inherit {
+  font-size: inherit;
+}
+@media screen and (max-width: 840px) {
+  main {
+    padding-bottom: 120px;
+  }
+}
+main #story,
+main #worries,
+main #voice,
+main #introduction {
+  padding-top: 64px;
+}
+main #story > .container > .content,
+main #worries > .container > .content,
+main #voice > .container > .content,
+main #introduction > .container > .content {
+  padding-top: 64px;
+}
+main #story > .container > .content > .text,
+main #worries > .container > .content > .text,
+main #voice > .container > .content > .text,
+main #introduction > .container > .content > .text {
+  padding-top: 40px;
+}
+main #story > .container > .square,
+main #worries > .container > .square,
+main #voice > .container > .square,
+main #introduction > .container > .square {
+  margin: 24px auto 0;
+  padding: 40px 24px;
+  border: solid 1px var(--color-main);
+  width: calc(100% - 30px);
+  border-radius: 4px;
+}
+main #story > .container > .text,
+main #worries > .container > .text,
+main #voice > .container > .text,
+main #introduction > .container > .text {
+  padding-top: 24px;
+}
+main #voice > .container > .content {
+  padding-top: 56px;
+}
+main #voice > .container > .content:first-child {
+  padding-top: 64px;
+}
+main #voice > .content {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+main #introduction > .container {
+  padding-top: 120px;
+}
+main #introduction > .container > .me {
+  padding-top: 120px;
+}
+main #introduction > .container > .me > img {
+  max-width: 240px;
+  margin: 0 auto;
+}
+main #introduction > .container > .me > .text {
+  padding-top: 24px;
+}
+main #introduction > .container > .content > .text {
+  font-size: 14px;
+}
+main #introduction > .container > .content > .text .bold {
+  font-size: 16px;
+  font-weight: bold;
+}
+main #introduction > .container > .content > .text .bold.min {
+  font-size: 14px;
+}
+main #introduction > .container > .content > .text .red {
+  color: var(--color-red);
+}
+main #introduction > .container > .content > .text .lead {
+  position: relative;
+}
+main #introduction > .container > .content > .text .lead::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  background-color: var(--color-red);
+}
+main #introduction > .container > .content > .biography {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  padding: 18px 0 0;
+}
+main #introduction > .container > .content > .biography > .title {
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+main #introduction > .container > .content > .biography > .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-main);
+  width: calc(50% - 32px);
+  height: 1px;
+  border-radius: 4px;
+}
+main #introduction > .container > .content > .biography > .title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-main);
+  width: calc(50% - 32px);
+  height: 1px;
+  border-radius: 4px;
+}
+main #introduction > .container > .content > .biography > .text {
+  position: relative;
+  font-size: 14px;
+  border-bottom: solid 1px var(--color-main);
+  padding-bottom: 40px;
+}
+main #introduction > .container > .content > .biography > .text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -18px;
+  background-color: var(--color-main);
+  width: 1px;
+  height: calc(100% + 18px);
+  border-radius: 4px;
+}
+main #introduction > .container > .content > .biography > .text::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -18px;
+  background-color: var(--color-main);
+  width: 1px;
+  height: calc(100% + 18px);
+  border-radius: 4px;
+}
+main #consultation {
+  padding-top: 120px;
+}
+main #consultation > .container > .content > .lead1 {
+  padding-top: 40px;
+  line-height: 1.4;
+}
+main #consultation > .container > .content > .lead1 > .line {
+  position: relative;
+  font-size: 20px;
+}
+main #consultation > .container > .content > .lead1 > .line::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 100%;
+  height: 5px;
+  left: 0;
+  background-color: var(--color-orange);
+}
+main #consultation > .container > .content > .padding {
+  width: calc(100% - 30px);
+  margin: 32px auto 0;
+}
+main #consultation > .container > .content > .lead2 {
+  padding: 32px 0 64px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+main #consultation > .container > .content > .lead2 > .emp {
+  position: relative;
+  font-size: 32px;
+  color: var(--color-red);
+  font-weight: bold;
+}
+main #consultation > .container > .content > .lead2 > .emp::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background-color: var(--color-red);
+}
+main #consultation > .container > .content > .text {
+  padding-top: 32px;
+  text-decoration: underline;
+}
+main #consultation > .container > .content > .square {
+  margin: 24px auto 0;
+  padding: 40px 24px;
+  border: solid 1px var(--color-default);
+  width: calc(100% - 30px);
+  border-radius: 4px;
+}
+main #consultation > .container > .content > .square > .min {
+  font-size: 12px;
+}
+main #line {
+  padding-top: 56px;
+}
+main #line > .container > .content > .title {
+  padding-top: 48px;
+  font-size: 24px;
+  line-height: 1.4;
+}
+main #line > .container > .content > .text {
+  padding-top: 32px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+main #line > .container > .content > .text > .bold {
+  font-size: 12px;
+  font-weight: bold;
+}
+main #line > .container > .content > .text > .emp {
+  color: var(--color-red);
+  text-decoration: underline;
+}
+main #line > .container > .content > .thumbnail {
+  margin: 16px auto 0;
+  width: calc(100% - 128px);
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

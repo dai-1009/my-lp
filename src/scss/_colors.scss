@@ -1,0 +1,14 @@
+/*
+色に関して記述しているファイル
+色に関して、ここで宣言をしたものを利用する様にする
+*/
+
+:root {
+  // fontのカラー
+  --color-default: #222222;
+  --color-white: #fff;
+  --color-gray: #929292;
+  --color-main: #306FB8;
+  --color-red: #FF2E00;
+  --color-orange: #FD9A28;
+}
